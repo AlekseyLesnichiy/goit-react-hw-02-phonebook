@@ -21,6 +21,6 @@ export const Input = styled.input`
   border-radius: 5px;
   border: 1px solid rgb(206, 205, 205);
   &:focus {
-    border: 4px solid #99c2f8;
+    border: 4px solid #0c60ce;
   }
 `;
