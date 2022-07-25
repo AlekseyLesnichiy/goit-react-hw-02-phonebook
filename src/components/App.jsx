@@ -33,7 +33,9 @@ class App extends Component {
     const { contacts } = this.state;
     //переменная которая проверяет существует ли контакт в массиве контактов
     //ставим !! если что то найдет то получим true в противном случае false
-    const isExistContact = !!contacts.find(contact => contact.name === name);
+    const isExistContact = !!contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
     //если контакт существует то выводим сообщение
     isExistContact && Notify.failure('Contact is already exist');
     //но так как у нас функция проверяет на уникальность то мы ставим инверсию (тоесть не существует контакта значит он уникальный)

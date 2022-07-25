@@ -1,19 +1,7 @@
 import PropTypes from 'prop-types';
 
-import {
-  ButtonDelete,
-  ContactListLi,
-  ContactListBox,
-} from './ContactList.styled';
-
-const ContactListItem = ({ id, name, number, onRemove }) => {
-  return (
-    <ContactListLi>
-      {name}: {number}
-      <ButtonDelete onClick={() => onRemove(id)}>Delete</ButtonDelete>
-    </ContactListLi>
-  );
-};
+import { ContactListBox } from './ContactList.styled';
+import ContactListItem from './ContactListItem';
 
 //компонент разметки самого списка
 const ContactList = ({ contacts, onRemove }) => {
@@ -30,12 +18,6 @@ const ContactList = ({ contacts, onRemove }) => {
   );
 };
 
-ContactListItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  onRemove: PropTypes.func,
-};
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
